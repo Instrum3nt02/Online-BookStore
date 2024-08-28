@@ -15,6 +15,8 @@ public partial class Book
 
     public string? Language { get; set; }
 
+    public string? Category { get; set; }
+
     public int? PublisherId { get; set; }
 
     public DateOnly? PublishedDate { get; set; }
@@ -27,15 +29,11 @@ public partial class Book
 
     public string? ImageUrl { get; set; }
 
-    public virtual Author? Author { get; set; }
+    public string? AuthorName {get; set; }
+    
 
     public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
 
     public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 
-    public virtual Publisher? Publisher { get; set; }
-
-    public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
-
-    public virtual ICollection<Tag> Tags { get; set; } = new List<Tag>();
 }

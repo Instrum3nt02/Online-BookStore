@@ -8,6 +8,8 @@ using server.Policies;
 using server.Services;
 using server.Repositories;
 using System;
+using server.Repositories.BookRepo;
+using server.Services.BookService;
 
 namespace OnlineBookStore
 {
@@ -65,6 +67,8 @@ namespace OnlineBookStore
             builder.Services.AddTransient(typeof(IAuthRepo), typeof(AuthRepo));
             builder.Services.AddTransient(typeof(IPasswordHasher<User>),typeof(PasswordHasher<User>));
             builder.Services.AddTransient(typeof(ITokenGenerator),typeof(JwtTokenGenerator));
+            builder.Services.AddTransient(typeof(IBookRepo), typeof(BookRepo));
+            builder.Services.AddTransient(typeof(IBookService), typeof(BookService));
             
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

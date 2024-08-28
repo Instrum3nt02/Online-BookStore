@@ -14,6 +14,7 @@ namespace server.Repositories
 
         public async Task<User> GetUserByEmailAsync(string Email)
         {
+            
             return await _context.Users.SingleOrDefaultAsync(u => u.Email == Email);
         }
 
